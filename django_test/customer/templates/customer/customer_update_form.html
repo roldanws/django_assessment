@@ -1,0 +1,23 @@
+{% extends 'customer/base.html' %} {% block title %}Actualizar cliente{% endblock %} {% block content %}
+<main role="main">
+    <div class="container">
+        <div class="row mt-3 mb-5">
+            <div class="col-md-9 mx-auto">
+                <div>
+                    {% if 'ok' in request.GET %}
+                    <p style="color:green;">
+                        Cliente editado correctamente.
+                        <a href="{% url 'customer:customer' customer.id customer.name|slugify %}">Haz clic aquí para ver el resultado</a>.
+                    </p>
+                    {% endif %}
+                    <form action="" method="post">{% csrf_token %} {{ form.as_p }}
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary btn-block" value="Actualizar cliente" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

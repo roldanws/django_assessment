@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'administrator/dist/css/style.css' %}"> {% load bootstrap4 %}
+    <!-- Se carga css -->
+    {% bootstrap_css %}
+</head>
+
+<body>
+    {% block content %} {% endblock content %}
+</body>
+
+</html>

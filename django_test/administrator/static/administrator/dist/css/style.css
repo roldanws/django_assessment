@@ -1,0 +1,9 @@
+body {
+    background-color: brown;
+}
+
+.formulario-iniciar-sesion {
+    text-align: center;
+    margin-top: 10rem;
+    background-color: red;
+}

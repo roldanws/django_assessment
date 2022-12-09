@@ -1,0 +1,12 @@
+{% extends 'customer/base.html' %} {% block content %}
+<main role="main">
+    <div class="container mb-4">
+        <h2>Customer</h2>
+        <p>Id: {{customer.id}}</p>
+        <p>Name: {{customer.name|striptags|safe|truncatechars:"200"}}</p>
+        <p>Paternal surname: {{customer.paternal_surname|striptags|safe|truncatechars:"200"}}</p>
+        <p>email: {{customer.email|striptags|safe|truncatechars:"200"}}</p>
+
+    </div>
+</main>
+{% endblock %}

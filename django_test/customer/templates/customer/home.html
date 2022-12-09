@@ -1,0 +1,25 @@
+{% extends 'customer/base.html' %} {% block title %}Listar clientes{% endblock %}{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a href="{% url 'customer:customers'%}" type="button" class="nav-link">Cientes</a>
+
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'customer:payments'%}" type="button" class="nav-link">Pagos</a>
+            </li>
+
+        </ul>
+        <a href="{% url 'admin:index'%}" type="button" class="nav-link">Admin</a>
+        <button href="{% url 'customer:payments'}" class="btn btn-danger my-2 my-sm-0" type="submit">Salir</button>
+    </div>
+</nav>
+<main>
+    <h1>Bienvenido {{user.name}}</h1>
+</main>

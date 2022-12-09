@@ -1,0 +1,26 @@
+{% extends "administrator/base.html" %} {% block title %}Bievenido{% endblock %} {% block content %} {% if user.is_authenticated %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a href="{% url 'customer:customers'%}" type="button" class="nav-link">Cientes</a>
+
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'customer:payments'%}" type="button" class="nav-link">Pagos</a>
+            </li>
+
+        </ul>
+        <a href="{% url 'admin:index'%}" type="button" class="nav-link">Admin</a>
+        <button class="btn btn-danger">  <a href="{% url 'administrator:sign_out'%}" class="nav-link" style="color:white;">Salir</a></button>
+    </div>
+</nav>
+<h1>Hola {{ user.username }}</h1>
+<h1>Bienvenido</h1>
+<a href="{% url 'customer:customers' %}">Ver clientes</a> {% else %}
+<h1>No has iniciado sesion</h1> {% endif %} {% endblock content %}
